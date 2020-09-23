@@ -1,3 +1,6 @@
+## Author
+John Steve Palero
+
 ## Install
 
 ```jsx
@@ -22,46 +25,32 @@ npx react-native link
   npx react-native run-android
   ```
 
-## Test (Detox)
+## Notes
 
-### Requirements
+  #### iOS
+  - Apparently I don't have a MAC so I can't verify the iOS app.
 
-  - detox-cli
+### Packages
 
-  ```
-  npm install -g detox-cli
-  ```
+  #### axios
+  - Used as a request handler.
+  - I specifically use version 0.18.1 for me to enable retry as an interceptor.
 
-### Running Tests
+  #### react-native-fast-image
+  - Image component
+  - Able to cache images
 
-- #### Debug
-  - Build debug apk
-  
-  ```
-  detox build -c android.emu.debug
-  ```
+  #### react-native-vector-icons
+  - Icon provider
 
-  - Run packager
+  #### react-navigation
+  - Navigation handler
 
-  ```
-  npx react-native start
-  ```
+  #### husky
+  - pre-commit hooks
 
-  - Run debug apk
+  #### moment
+  - date handler
 
-  ```
-  detox test -c android.emu.debug
-  ```
-
-- #### Release
-  - Build release apk
-  
-  ```
-  detox build -c android.emu.release
-  ```
-
-  - Run release apk test
-
-  ```
-  detox test -c android.emu.release
-  ```
+  #### other packages
+  - other packages not mentioned above are either devDependencies or dependencies for my own UI components.

@@ -10,10 +10,12 @@ import { createStackNavigator } from "react-navigation-stack";
 import {
   Splash,
   Home,
+  Details,
 } from "@screens"
 
 const Main = createStackNavigator({
   Home,
+  Details,
 }, {
   initialRouteName: "Home",
   defaultNavigationOptions: {
