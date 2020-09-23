@@ -11,11 +11,6 @@
     "lint": "tslint --project tsconfig.json",
     "clean-build": "cd android && ./gradlew clean && cd ../"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint"
-    }
-  },
   "dependencies": {
     "axios": "0.18.1",
     "moment": "^2.29.0",

@@ -41,7 +41,6 @@ class Home extends Component<Props> {
 
   renderItem = ({ item }: any) => {
     const { navigation } = this.props;
-    console.log("test husky")
     return (
       <TouchableOpacity
         style={home.itemContainer}
