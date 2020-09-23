@@ -1,3 +1,4 @@
+import moment from "moment"
 import * as types from "./action-types"
 
 interface Action {
@@ -6,11 +7,15 @@ interface Action {
 }
 
 interface ReducerState {
+  search: string,
+  date: string,
   data: [],
   fetching: boolean,
 }
 
 const initialState: ReducerState = {
+  search: "tech",
+  date: moment().format("YYYY-MM-DD"),
   data: [],
   fetching: false,
 }

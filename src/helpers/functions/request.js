@@ -4,7 +4,7 @@ import axios from "axios"
 import Config from "react-native-config";
 
 const request = axios.create({
-  baseURL: Config.DEV === "yes" ? Config.DEV_API_URL : Config.API_URL,
+  baseURL: Config.DEV === "yes" ? Config.DEV_API_URL : Config.PROD_API_URL,
   timeout: 15000,
   retry: 0,
 })

@@ -1,18 +1,94 @@
 import React, { Component } from "react"
 
 import {
+  FlatList,
   View,
+  TouchableOpacity,
 } from "react-native"
 
+import { connect } from "react-redux"
+
 import {
+  widthPercentageToDP as wp,
+} from "react-native-responsive-screen"
+
+import moment from "moment"
+
+import {
+  CachedImage,
   Container,
   Header,
+  Paragraph,
+  Space,
 } from "@base-components"
 import { COLOR } from "@themes"
 import home from "./styles/home"
+import { FETCH_NEWS_REQUEST } from "../../redux/news/action-types"
 
-class Home extends Component {
+interface Props {
+  navigation: any,
+  dispatch: any,
+  news: any,
+}
+
+class Home extends Component<Props> {
+  componentDidMount() {
+    const { dispatch } = this.props;
+    dispatch({
+      type: FETCH_NEWS_REQUEST,
+    })
+  }
+
+  renderItem = ({ item }: any) => {
+    const { navigation } = this.props;
+    return (
+      <TouchableOpacity
+        style={home.itemContainer}
+        onPress={() => navigation.navigate("Details", item)}
+      >
+        <View style={home.itemHeader}>
+          {item.urlToImage && (
+            <CachedImage
+              uri={item.urlToImage}
+              width={wp(30)}
+              height={wp(25)}
+            />
+          )}
+          <View style={home.title}>
+            <Paragraph
+              text={item.title}
+              fontType="bold"
+              size={16}
+            />
+            <Space size={5} />
+            <Paragraph
+              text={item.author ? item.author : ""}
+              fontType="bold"
+              size={12}
+            />
+            <Paragraph
+              text={moment(item.publishedAt).format("dddd, MMMM DD YYYY")}
+              fontType="light"
+              size={12}
+            />
+          </View>
+        </View>
+        <View style={home.description}>
+          <Paragraph
+            text={item.description}
+            fontType="light"
+            size={14}
+          />
+        </View>
+      </TouchableOpacity>
+    )
+  }
+
   render() {
+    const {
+      news,
+      dispatch,
+    } = this.props;
     return (
       <Container>
         <Header
@@ -27,11 +103,25 @@ class Home extends Component {
           backgroundColor={COLOR.DARK_BLUE}
         />
         <View style={home.content}>
-          <View />
+          <FlatList
+            data={news.data}
+            renderItem={this.renderItem}
+            contentContainerStyle={home.listContainer}
+            refreshing={news.fetching}
+            onRefresh={() => {
+              dispatch({
+                type: FETCH_NEWS_REQUEST,
+              })
+            }}
+          />
         </View>
       </Container>
     )
   }
 }
 
-export default Home;
+const mapStateToProps = (redux: any) => ({
+  news: redux.news,
+})
+
+export default connect(mapStateToProps)(Home);

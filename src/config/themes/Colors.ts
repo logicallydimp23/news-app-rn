@@ -51,7 +51,7 @@ const COLOR = {
   TRANSPARENT_GREEN: "rgba(12, 40, 23, 0.70)",
   TRANSPARENT_BLACK: "rgba(0, 0, 0, 0.80)",
 
-  TRANSPARENT_LIGHT_BLACK: "rgba(0, 0, 0, 0.30)",
+  TRANSPARENT_LIGHT_BLACK: "rgba(0, 0, 0, 0.50)",
   TRANSPARENT_LIGHT: "rgba(255, 255, 255, 0.1)",
 
   TRANSPARENT: "transparent",
