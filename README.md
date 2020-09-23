@@ -54,3 +54,8 @@ npx react-native link
 
   #### other packages
   - other packages not mentioned above are either devDependencies or dependencies for my own UI components.
+
+### Repository contributors
+  - dimps23 and logicallydimp23 is both my account.
+  - dimps23 is what my authenticated account on my PC.
+  - logicallydimp23 is the account authenticated on my browser.
