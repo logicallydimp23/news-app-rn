@@ -6916,6 +6916,11 @@ react-native-linear-gradient@^2.5.6:
   resolved "https://registry.yarnpkg.com/react-native-linear-gradient/-/react-native-linear-gradient-2.5.6.tgz#96215cbc5ec7a01247a20890888aa75b834d44a0"
   integrity sha512-HDwEaXcQIuXXCV70O+bK1rizFong3wj+5Q/jSyifKFLg0VWF95xh8XQgfzXwtq0NggL9vNjPKXa016KuFu+VFg==
 
+react-native-paragraph-component@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-paragraph-component/-/react-native-paragraph-component-1.0.1.tgz#4614e6d81721a3f731bc709371b1564c7bad1c0b"
+  integrity sha512-odRJQnqp8zlauDxm1rlHCBk8V6OpZDkaPe/T7qI2AXznHK3Y/mgbMDmjp0Zcmrj59ARLCEC5LAxKcXVmnNzRyA==
+
 react-native-reanimated@^1.7.0:
   version "1.13.0"
   resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-1.13.0.tgz#1ee5d27d34bd2cee7dfad4ae9a3673300872c917"

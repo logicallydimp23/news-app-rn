@@ -14,11 +14,12 @@ import {
 
 import moment from "moment"
 
+import Paragraph from "react-native-paragraph-component"
+
 import {
   CachedImage,
   Container,
   Header,
-  Paragraph,
   Space,
 } from "@base-components"
 import { COLOR } from "@themes"
